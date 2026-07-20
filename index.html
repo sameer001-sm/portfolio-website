@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <title>Sameer - Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
 </head>
+
 <body>
 
   <header>
@@ -16,12 +18,12 @@
     </nav>
   </header>
 
-  <section id="about">
+  <section id="about" class="reveal">
     <h2>About Me</h2>
     <img src="IMG.jpg.jpeg" width="200">
   </section>
 
-  <section id="projects">
+  <section id="projects" class="reveal">
     <h2>My Projects</h2>
     <div class="project">
       <h3>Portfolio Website</h3>
@@ -29,15 +31,42 @@
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="reveal">
     <h2>Contact Me</h2>
     <p>Email: sam388030@gmail.com</p>
     <p>GitHub: github.com/sameer001-sm</p>
   </section>
 
+  <section id="contact" class="reveal">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form>
+        <input type="text" placeholder="Sameer Kamal" required>
+        <input type="email" placeholder="sam388030@gmail.com" required>
+        <textarea placeholder="Write Your Query Here" rows="5" required></textarea>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+  </section>
+
   <footer>
     <p>© 2026 Sameer. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Animation
+    ScrollReveal().reveal('section', { delay: 200, distance: '50px', origin: 'bottom' });
+</script>
 
 </body>
 </html>
